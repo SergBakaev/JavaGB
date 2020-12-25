@@ -1,0 +1,64 @@
+public class JavaApp {
+
+    public static void main(String[] args) {
+        byte a = 100;
+        short b = 32766;
+        int c = 102358;
+        long d = 100000l;
+        float e = 125.25f;
+        char f = 'ы';
+        boolean bool = false;
+        System.out.println(calculate(5,5,5,5));
+        System.out.println(task10and20(5,5));
+        isPositiveOrNegative(30);
+        System.out.println(isNegative(-5));
+        methodName("Сергей");
+        years(8);
+
+    }
+
+    public static int calculate(int a, int b, int c, int d) {
+
+        return a * (b + (c / d));
+    }
+
+    public static boolean task10and20(int x1, int x2) {
+        int o = 10;
+        int s = 20;
+        if (o <= (x1 + x2) && s >= (x1 + x2)) {
+            return true;
+        }else if(o>(x1+x2) || s < (x1+x2)) {
+            return false;
+        }
+
+        return false;
+    }
+
+    public static void isPositiveOrNegative(int x) {
+
+        if(x>=0){
+            System.out.println("Положительное число");
+        }else if(x<0){
+            System.out.println("Отрицательное число");
+        }
+
+    }
+    public static boolean isNegative(int x) {
+        if(x<0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static void methodName(String name) {
+        System.out.println("Привет, " + name);
+    }
+
+    public static void years(int a) {
+        if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
+            System.out.println("Високосный год");
+        }else
+            System.out.println("Не високосный год");
+
+    }
+}
