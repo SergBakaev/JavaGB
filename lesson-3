@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    private static Scanner number1 = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        int randomNumber;
+        int range = 9;
+        randomNumber = (int) (Math.random() * range);
+        playLevel(randomNumber, range);
+        int x1 = 0, x2 = 1;
+//        number1.close();
+        while (true) {
+            System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
+            Scanner choise = new Scanner((System.in));
+            int input_choise = Integer.parseInt(choise.nextLine());
+            if (input_choise == x2) {
+                playLevel(randomNumber, range);
+            }else if (input_choise == x1) {
+                break;
+            }
+        }
+
+    }
+
+    private static void playLevel(int randomNumber, int range){
+
+            System.out.println("Угадайте число от 0 до 9. У вас есть 3 попытки");
+            int input_number1 = number1.nextInt();
+            for(int i = 0; i < 2; i++){
+            if(input_number1 == randomNumber) {
+                System.out.println("Вы угадали!!!");
+                break;
+            }else {
+            System.out.println("Вы не угадали.");}
+                input_number1 = number1.nextInt();
+            }
+
+    }
+//  
+}
+
